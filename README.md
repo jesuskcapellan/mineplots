@@ -1,1 +1,1 @@
-# mineplots
+# MinePlots
