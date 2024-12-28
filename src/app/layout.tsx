@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Navbar } from "@/components/navbar";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
                 >
                     <div className="relative flex min-h-svh flex-col bg-background">
                         <div className="border-grid flex flex-1 flex-col">
+                            <Navbar />
                             {children}
                         </div>
                     </div>
