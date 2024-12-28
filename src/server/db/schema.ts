@@ -28,6 +28,7 @@ export const builds = createTable("builds", {
     title: varchar("title", { length: 255 }).notNull(),
     description: text("description"),
     tags: tagsEnum("tags").array().default([]).notNull(),
+    coverImageUrl: text("cover_image_url").notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
@@ -73,7 +74,7 @@ export const images = createTable("images", {
         .notNull(),
     buildId: uuid("build_id").unique().notNull(),
     userId: varchar("user_id", { length: 255 }).notNull(),
-    imageUrl: varchar("image_url", { length: 255 }).notNull(),
+    imageUrl: text("image_url").notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
